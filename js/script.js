@@ -63,6 +63,7 @@ for(let link of links) {
         /* remove content of links in left column */
         const titleList = document.querySelector(optTitleListSelector);
         titleList.innerHTML = "";
+        //let html = "";
         console.log(`titleList: `, titleList);
 
         /* for each article */
@@ -70,7 +71,6 @@ for(let link of links) {
         console.log(`articles: `, articles);
 
         for(let article of articles) {
-
             /* get id of the article */
             const articleId = article.getAttribute("id");
             console.log(`articleId: `, articleId);
@@ -88,9 +88,12 @@ for(let link of links) {
             console.log(`linkHTML: `, linkHTML);
 
             /* insert HTML into list of links*/
-
-
+            titleList.insertAdjacentHTML("beforeend", linkHTML); // with positions: beforebegin, afterbegin & afterend the list is styled by deafult for ul
+            //html = html + linkHTML;
+            //console.log(`let html: `, html);
         }
+
+        //titleList.innerHTML = html;
 
     }
 

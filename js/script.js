@@ -66,7 +66,7 @@ for(let link of links) {
         console.log(`titleList: `, titleList);
 
         /* for each article */
-        const articles = document.querySelector(optArticleSelector);
+        const articles = document.querySelectorAll(optArticleSelector);
         console.log(`articles: `, articles);
 
         for(let article of articles) {
@@ -79,15 +79,13 @@ for(let link of links) {
             const articleTitle = article.querySelector(optTitleSelector).innerHTML;
             console.log(`articleTitle: `, articleTitle);
 
-            /* get the title from the title element */
-
+            /* get the title from the title element */       
 
             /* create HTML of the link */
 
 
             /* insert HTML into list of links*/
 
-            
         }
 
     }

@@ -63,11 +63,15 @@ for(let link of links) {
         /* remove content of links in left column */
         const titleList = document.querySelector(optTitleListSelector);
         titleList.innerHTML = "";
-        console.log(`Funkcja titleList: `, titleList);
+        console.log(`titleList: `, titleList);
 
         /* for each article */
-            /* get id of the article */
+        const articles = document.querySelector(optArticleSelector);
+        console.log(`articles: `, articles);
 
+            /* get id of the article */
+        const articleId = articles.getAttribute("id");
+        console.log(`articleId: `, articleId);
 
             /* find the title element*/
 

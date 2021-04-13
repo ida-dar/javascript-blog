@@ -75,16 +75,20 @@ for(let link of links) {
             const articleId = article.getAttribute("id");
             console.log(`articleId: `, articleId);
 
-            /* find the title element*/
+            /* find the title element */
             const articleTitle = article.querySelector(optTitleSelector).innerHTML;
             console.log(`articleTitle: `, articleTitle);
 
-            /* get the title from the title element */       
+            /* get the title from the title element */
+            /*articleTitle.innerHTML;
+            console.log(`articleTitle.innerHTML: `, articleTitle.innerHTML);*/    
 
             /* create HTML of the link */
-
+            const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
+            console.log(`linkHTML: `, linkHTML);
 
             /* insert HTML into list of links*/
+
 
         }
 

@@ -70,11 +70,12 @@ for(let link of links) {
         console.log(`articles: `, articles);
 
             /* get id of the article */
-        const articleId = articles.getAttribute("id");
+        const articleId = article.getAttribute("id");
         console.log(`articleId: `, articleId);
 
             /* find the title element*/
-
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+        console.log(`articleTitle: `, articleTitle);
 
             /* get the title from the title element */
 

@@ -51,9 +51,9 @@ for(let link of links) {
 }
 
 {   
-    const optArticleSelector = '.post',
-        optTitleSelector = '.post-title',
-        optTitleListSelector = '.titles';
+    const optArticleSelector = ".post",
+        optTitleSelector = ".post-title",
+        optTitleListSelector = ".titles";
     
     
     const generateTitleLinks = function() {
@@ -61,7 +61,9 @@ for(let link of links) {
         
 
         /* remove content of links in left column */
-
+        const titleList = document.querySelector(optTitleListSelector);
+        titleList.innerHTML = "";
+        console.log(`Funkcja titleList: `, titleList);
 
         /* for each article */
             /* get id of the article */
@@ -76,7 +78,7 @@ for(let link of links) {
             /* create HTML of the link */
 
 
-            /* put created HTML into links' list */
+            /* put created HTML into links" list */
 
 
     }

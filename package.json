@@ -11,6 +11,7 @@
     "test": "npm run test:*",
     "test:html": "html-validate *.html",
     "test:js": "eslint js/",
+    "test:scss": "stylelint sass/",
     "build": "npm-run-all build:* test",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
@@ -35,6 +36,7 @@
     "postcss-cli": "^8.3.1"
   },
   "dependencies": {
-    "eslint": "^7.24.0"
+    "eslint": "^7.24.0",
+    "stylelint-scss": "^3.19.0"
   }
 }

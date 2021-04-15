@@ -119,9 +119,10 @@
       console.log(articleTags);
 
       /* split tags into array */
-
+      const articleTagsArray = articleTags.split(' ');
+      console.log(`articleTagsArray: `, articleTagsArray);
+      
       /* START LOOP: for each tag */
-
 
         /* generate HTML of the link */
 

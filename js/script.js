@@ -121,19 +121,22 @@
       /* split tags into array */
       const articleTagsArray = articleTags.split(' ');
       console.log(`articleTagsArray: `, articleTagsArray);
-      
+
       /* START LOOP: for each tag */
+      for(let tag of articleTagsArray){
 
         /* generate HTML of the link */
-
+        const linkHTML = ` <li><a href='#tag-${tag}'><span>${tag}</span></a></li>`;
+        console.log(`linkHTML: `, linkHTML);
 
         /* add generated code to html variable */
-
+        html = html + linkHTML;
+        console.log(`html: `, html);
 
       /* END LOOP: for each tag */
-
+      }
     /* insert HTML of all the links into the tags wrapper */
-
+      tagsList.innerHTML = html;
 
     /* END LOOP: for every article: */
     }

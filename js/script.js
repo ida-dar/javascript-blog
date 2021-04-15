@@ -108,7 +108,8 @@
     for(let article of articles) {
 
       /* find tags wrapper */
-
+      const tagsList = article.querySelector(optArticleTagsSelector);
+      console.log(`tagsList: `, tagsList);
 
       /* make html variable with empty string */
 
@@ -129,7 +130,6 @@
 
 
       /* END LOOP: for each tag */
-
 
     /* insert HTML of all the links into the tags wrapper */
 

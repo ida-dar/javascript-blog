@@ -112,7 +112,7 @@
       console.log(`tagsList: `, tagsList);
 
       /* make html variable with empty string */
-
+      let html = '';
 
       /* get tags from data-tags attribute */
 

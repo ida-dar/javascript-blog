@@ -96,11 +96,16 @@
   generateTitleLinks();
 
 
+
+
+  // eslint-disable-next-line no-inner-declarations
   function generateTags(){
     /* find all articles */
+    const articles = document.querySelectorAll(optArticleSelector);
+    console.log(articles);
 
     /* START LOOP: for every article: */
-
+    for(let article of articles) {
 
       /* find tags wrapper */
 
@@ -130,7 +135,7 @@
 
 
     /* END LOOP: for every article: */
-
+    }
 
   }
 

@@ -99,6 +99,7 @@ const titleClickHandler = function(event) {
   function generateTags(){
   /* find all articles */
 
+  
 
   /* START LOOP: for every article: */
 

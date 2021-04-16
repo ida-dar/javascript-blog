@@ -146,15 +146,16 @@
   generateTags();
 
 
+  // eslint-disable-next-line no-inner-declarations
   function tagClickHandler(event){
     /* prevent default action for this event */
-
+    event.preventDefault();
 
     /* make new constant named "clickedElement" and give it the value of "this" */
-
+    const clickedElement = this;
+    console.log(`clickedElement: `, clickedElement);
 
     /* make a new constant "href" and read the attribute "href" of the clicked element */
-
 
     /* make a new constant "tag" and extract tag from the "href" constant */
 
@@ -198,7 +199,7 @@
 
 
     /* END LOOP: for each link */
-    
+
   }
 
   addClickListenersToTags();

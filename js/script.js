@@ -46,7 +46,7 @@
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = 'post-author';
+    optArticleAuthorSelector = '.post-author';
 
 
   const generateTitleLinks = function(customSelector = '') {
@@ -217,7 +217,8 @@
     for(let article of articles) {
 
       /* find author wrapper */
-      article.querySelectorAll(optArticleAuthorSelector);
+      const authorWrapper = article.querySelector(optArticleAuthorSelector);
+      console.log(`authorWrapper: `, authorWrapper);
 
       /* make html variable with empty string */
       let html = '';
@@ -227,13 +228,14 @@
       console.log(`articleAuthor: `, articleAuthor);
 
       /* generate HTML of the link */
-
+      const linkHTML = `<a href='#author-${articleAuthor}'>by <span>${articleAuthor}</span></a>`;
+      console.log(linkHTML);
 
       /* add generated code to html variable */
-
+      html = html + linkHTML;
 
       /* insert HTML of all the links into the author wrapper */
-
+      authorWrapper.innerHTML = html;
 
     /* END LOOP: for every article: */
     }

@@ -217,12 +217,14 @@
     for(let article of articles) {
 
       /* find author wrapper */
+      article.querySelectorAll(optArticleAuthorSelector);
 
       /* make html variable with empty string */
-
+      let html = '';
 
       /* get author from data-author attribute */
-
+      const articleAuthor = article.getAttribute('data-author');
+      console.log(`articleAuthor: `, articleAuthor);
 
       /* generate HTML of the link */
 

@@ -97,8 +97,6 @@
 
 
 
-
-  // eslint-disable-next-line no-inner-declarations
   function generateTags(){
     /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
@@ -141,12 +139,12 @@
     /* END LOOP: for every article: */
     }
 
-  }
+  };
 
   generateTags();
 
 
-  // eslint-disable-next-line no-inner-declarations
+
   function tagClickHandler(event){
     /* prevent default action for this event */
     event.preventDefault();
@@ -156,12 +154,13 @@
     console.log(`clickedElement: `, clickedElement);
 
     /* make a new constant "href" and read the attribute "href" of the clicked element */
+    const href = clickedElement.getAttribute('href');
 
     /* make a new constant "tag" and extract tag from the "href" constant */
-
+    const tag = href.replace('#tag-', '');
 
     /* find all tag links with class active */
-
+    const activeTag = tag.querySelectorAll('a.active[href^="#tag-"]');
 
     /* START LOOP: for each active tag link */
 
@@ -186,7 +185,7 @@
 
     /* execute function "generateTitleLinks" with article selector as argument */
 
-  }
+  };
 
   function addClickListenersToTags(){
     /* find all links to tags */

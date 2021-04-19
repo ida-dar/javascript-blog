@@ -210,13 +210,13 @@
 
   function generateAuthor(){
     /* find all articles */
-
+    const articles = document.querySelectorAll(optArticleSelector);
+    console.log(articles);
 
     /* START LOOP: for every article: */
-
+    for(let article of articles) {
 
       /* find author wrapper */
-
 
       /* make html variable with empty string */
 
@@ -234,7 +234,7 @@
 
 
     /* END LOOP: for every article: */
-
+    }
   }
 
   generateAuthor();

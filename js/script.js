@@ -3,7 +3,7 @@
 //const { active } = require('browser-sync');
 
 {
-  const titleClickHandler = function(event) {
+  const titleClickHandler = function(event){
     event.preventDefault();
 
     const clickedElement = this;
@@ -14,7 +14,7 @@
     /* [DONE] remove class 'active' from all article links  */
     const activeLinks = document.querySelectorAll('.titles a.active');
 
-    for(let activeLink of activeLinks) {
+    for(let activeLink of activeLinks){
       activeLink.classList.remove('active');
     }
 
@@ -25,7 +25,7 @@
     /* [DONE] remove class 'active' from all articles */
     const activeArticles = document.querySelectorAll('.posts article.active');
 
-    for(let activeArticle of activeArticles) {
+    for(let activeArticle of activeArticles){
       activeArticle.classList.remove('active');
     }
 
@@ -42,6 +42,7 @@
 
   };
 
+
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
@@ -49,9 +50,9 @@
     optArticleAuthorSelector = '.post-author';
 
 
-  const generateTitleLinks = function(customSelector = '') {
+  const generateTitleLinks = function(customSelector = ''){
     console.log(generateTitleLinks);
-    console.log(customSelector)
+    console.log(customSelector);
 
     /* remove content of links in left column */
     const titleList = document.querySelector(optTitleListSelector);
@@ -99,14 +100,13 @@
   generateTitleLinks();
 
 
-
   function generateTags(){
     /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
     console.log(articles);
 
     /* START LOOP: for every article: */
-    for(let article of articles) {
+    for(let article of articles){
 
       /* find tags wrapper */
       const tagsList = article.querySelector(optArticleTagsSelector);
@@ -147,7 +147,6 @@
   generateTags();
 
 
-
   function tagClickHandler(event){
     /* prevent default action for this event */
     event.preventDefault();
@@ -178,7 +177,7 @@
     const allTagLinks = document.querySelectorAll('a[href="' + href + '"]');
 
     /* START LOOP: for each found tag link */
-    for(let tagLink of allTagLinks) {
+    for(let tagLink of allTagLinks){
 
       /* add class active */
       tagLink.classList.add('active');
@@ -205,7 +204,6 @@
   }
 
   addClickListenersToTags();
-
 
 
   function generateAuthor(){

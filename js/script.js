@@ -45,7 +45,8 @@
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
-    optArticleTagsSelector = '.post-tags .list';
+    optArticleTagsSelector = '.post-tags .list',
+    optArticleAuthorSelector = 'post-author';
 
 
   const generateTitleLinks = function(customSelector = '') {
@@ -205,5 +206,37 @@
 
   addClickListenersToTags();
 
+
+
+  function generateAuthor(){
+    /* find all articles */
+
+
+    /* START LOOP: for every article: */
+
+
+      /* find author wrapper */
+
+
+      /* make html variable with empty string */
+
+
+      /* get author from data-author attribute */
+
+
+      /* generate HTML of the link */
+
+
+      /* add generated code to html variable */
+
+
+      /* insert HTML of all the links into the author wrapper */
+
+
+    /* END LOOP: for every article: */
+
+  }
+
+  generateAuthor();
 
 }

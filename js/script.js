@@ -48,9 +48,9 @@
     optArticleTagsSelector = '.post-tags .list';
 
 
-  const generateTitleLinks = function() {
+  const generateTitleLinks = function(customSelector = '') {
     console.log(generateTitleLinks);
-
+    console.log(customSelector)
 
     /* remove content of links in left column */
     const titleList = document.querySelector(optTitleListSelector);
@@ -59,7 +59,7 @@
     console.log(`titleList: `, titleList);
 
     /* for each article */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(optArticleSelector + customSelector);
     console.log(`articles: `, articles);
 
     for(let article of articles) {

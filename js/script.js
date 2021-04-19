@@ -1,5 +1,7 @@
 'use strict';
 
+//const { active } = require('browser-sync');
+
 {
   const titleClickHandler = function(event) {
     event.preventDefault();
@@ -139,7 +141,7 @@
     /* END LOOP: for every article: */
     }
 
-  };
+  }
 
   generateTags();
 
@@ -160,16 +162,16 @@
     const tag = href.replace('#tag-', '');
 
     /* find all tag links with class active */
-    const activeTag = tag.querySelectorAll('a.active[href^="#tag-"]');
+    const activeTags = tag.querySelectorAll('a.active[href^="#tag-"]');
 
     /* START LOOP: for each active tag link */
-
+    for(let activeTag of activeTags) {
 
       /* remove class active */
-
+      activeTag.classList.remove('active');
 
     /* END LOOP: for each active tag link */
-
+    }
 
     /* find all tag links with "href" attribute equal to the "href" constant */
 
@@ -182,10 +184,8 @@
 
     /* END LOOP: for each found tag link */
 
-
     /* execute function "generateTitleLinks" with article selector as argument */
-
-  };
+  }
 
   function addClickListenersToTags(){
     /* find all links to tags */

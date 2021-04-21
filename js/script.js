@@ -37,6 +37,7 @@
       titles: '.titles',
       tags: '.tags.list',
       authors: '.authors.list',
+      links: '.titles a'
     },
   };
 
@@ -50,7 +51,7 @@
     console.log(event);
 
     /* [DONE] remove class 'active' from all article links  */
-    const activeLinks = document.querySelectorAll(select.listOf.titles);
+    const activeLinks = document.querySelectorAll(select.listOf.links);
 
     for(let activeLink of activeLinks){
       activeLink.classList.remove('active');

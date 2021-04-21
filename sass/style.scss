@@ -40,6 +40,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: $color-dark;
+}
+
 /* Layout */
 .wrapper {
   display: flex;
@@ -76,7 +81,6 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  
   .active {
     font-weight: bold;
   }
@@ -112,4 +116,30 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+/* Tags */
+.tag-size-1 {
+  font-size: 100%;
+  color: rgb(139, 7, 7);
+}
+
+.tag-size-2 {
+  font-size: 115%;
+  color: rgb(17, 17, 148);
+}
+
+.tag-size-3 {
+  font-size: 130%;
+  color: orange;
+}
+
+.tag-size-4 {
+  font-size: 145%;
+  color: green;
+}
+
+.tag-size-5 {
+  font-size: 160%;
+  color: rgb(151, 10, 151);
 }

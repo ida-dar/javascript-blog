@@ -58,6 +58,7 @@ a {
 
 .posts {
   flex: 2 0 0;
+  position: relative;
 }
 
 .sidebar, .posts {
@@ -117,6 +118,8 @@ a {
 
 .post-tags {
   display: flex;
+  position: absolute;
+  bottom: 2.5%;
   p {
     margin: 0 10px 0 0;
   }

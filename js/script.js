@@ -100,9 +100,38 @@
 
   generateTitleLinks();
 
+  function calculateTagsParams(tags){
+    const params = {max: 0, min: 999999};
+    for(let tag in tags){
+      console.log(`${tag} is used ${tags[tag]} times`);
+
+      if(tags[tag] > params.max){
+      params.max = Math.max(tags[tag], params.max);
+      } else if(tags[tag] < params.min){
+        params.min = Math.min(tags[tag], params.min);
+      }
+
+      // Other options:
+
+      /*if(tags[tag] > params.max){
+      params.max = tags[tag];
+      } else if(tags[tag] < params.min){
+        params.min = tags[tag];
+      }*/
+
+      /* Syntax: condition ? valueIfTrue : valueIfFalse
+      params.max = tags[tag] > params.max ? tags[tag] : params.max;
+      params.min = tags[tag] < params.min ? tags[tag] : params.min;*/
+    }
+
+    return params;
+  }
+
+  calculateTagsParams();
+
 
   function generateTags(){
-    /* [NEW] create a new variable allTags with an empty object */
+    /*create a new variable allTags with an empty object */
     let allTags = {};
 
     /* find all articles */
@@ -138,10 +167,10 @@
         html = html + linkHTML;
         console.log(`html: `, html);
 
-        /* [NEW] check if this link is NOT already in allTags */
+        /*check if this link is NOT already in allTags */
         if(!allTags[tag]){
 
-          /* [NEW] add generated code to allTags array */
+          /*add generated code to allTags array */
           allTags[tag] = 1;
         } else {
           allTags[tag]++;
@@ -155,20 +184,22 @@
 
     /* END LOOP: for every article: */
     }
-    /* [NEW] find list of tags in right column */
+    /* find list of tags in right column */
     const tagList = document.querySelector('.tags');
 
     /* [NEW] create variable for all links HTML code */
+    const tagsParams = calculateTagsParams(allTags);
+    console.log('tagsParams:', tagsParams)
     let allTagsHTML = '';
 
-    /* [NEW] START LOOP: for each tag in allTags: */
+    /* START LOOP: for each tag in allTags: */
     for(let tag in allTags){
-      /* [NEW] generate code of a link and add it to allTagsHTML */
+      /* generate code of a link and add it to allTagsHTML */
       allTagsHTML += `<li><a href=#tags->${tag} (${allTags[tag]})</a></li>`;
     }
-    /* [NEW] END LOOP: for each tag in allTags: */
+    /* END LOOP: for each tag in allTags: */
 
-    /*[NEW] add HTML from allTagsHTML to tagList */
+    /* add HTML from allTagsHTML to tagList */
     tagList.innerHTML = allTagsHTML;
   }
 

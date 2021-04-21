@@ -133,7 +133,7 @@
 
 
   function calculateTagClass(count, params){
-    
+
   }
 
   function generateTags(){
@@ -201,7 +201,8 @@
     /* START LOOP: for each tag in allTags: */
     for(let tag in allTags){
       /* generate code of a link and add it to allTagsHTML */
-      allTagsHTML += `<li><a href=#tags->${tag} (${allTags[tag]})</a></li>`;
+      allTagsHTML += `<li><a href=#tags-${tag} class="${calculateTagClass(allTags[tag], tagsParams)}">${tag} (${allTags[tag]})</a></li>`;
+      console.log(`allTagsHTML: `, allTagsHTML);
     }
     /* END LOOP: for each tag in allTags: */
 

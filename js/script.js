@@ -332,7 +332,7 @@
       console.log(`articleAuthor: `, articleAuthor);
 
       /* generate HTML of the link */
-      const linkHTML = '<a href=#author-' + articleAuthor + '>by <span>' + articleAuthor + '</span></a>';
+      const linkHTML = '<a href="#author-' + articleAuthor + '">by <span>' + articleAuthor + '</span></a>';
       console.log(linkHTML);
 
       /* add generated code to html variable */
@@ -362,7 +362,7 @@
 
     for(let author in allAuthors){
       /* generate code of a link and add it to allAuthorsHTML */
-      allAuthorsHTML += '<li><a href="#author-' + author + '" >' + author + '('+ allAuthors[author]+')</a></li>';
+      allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + '('+ allAuthors[author]+')</a></li>';
       console.log(`allAuthorsHTML: `, allAuthorsHTML);
 
     /* END LOOP: for each author in allAuthors: */

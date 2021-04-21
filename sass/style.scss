@@ -3,6 +3,7 @@
 /* Variables */
 $color-light: #fff;
 $color-dark: #444;
+$color-decor: rgb(230, 236, 255);
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -88,6 +89,9 @@ a {
 
 .list-horizontal {
   li {
+    background-color: $color-decor;
+    padding: 0 7px;
+    border-radius: 2px;
     display: inline-block;
   }
 }
@@ -119,6 +123,17 @@ a {
 }
 
 /* Tags */
+.tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  li {
+    text-align: center;
+    margin: 5px;
+  }
+}
+
 .tag-size-1 {
   font-size: 100%;
   color: rgb(139, 7, 7);

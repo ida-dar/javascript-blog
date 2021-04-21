@@ -48,7 +48,9 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
-    optTagsListSelector = '.tags.list';
+    optTagsListSelector = '.tags.list',
+    optCloudClassCount = 5,
+    optCloudClassPrefix = 'tag-size-'
 
 
   const generateTitleLinks = function(customSelector = ''){
@@ -129,6 +131,10 @@
 
   calculateTagsParams();
 
+
+  function calculateTagClass(count, params){
+    
+  }
 
   function generateTags(){
     /*create a new variable allTags with an empty object */

@@ -97,7 +97,7 @@
     /* remove content of links in left column */
     const titleList = document.querySelector(select.listOf.titles);
     titleList.innerHTML = '';
-    //let html = '';
+    let html = '';
     console.log(`titleList: `, titleList);
 
     /* for each article */
@@ -124,12 +124,12 @@
       console.log(`linkHTML: `, linkHTML);
 
       /* insert HTML into list of links*/
-      titleList.insertAdjacentHTML('beforeend', linkHTML); // with positions: beforebegin, afterbegin & afterend the list is styled by deafult for ul
-      //html = html + linkHTML;
-      //console.log(`let html: `, html);
+      //titleList.insertAdjacentHTML('beforeend', linkHTML); // with positions: beforebegin, afterbegin & afterend the list is styled by deafult for ul
+      html = html + linkHTML;
+      console.log(`let html: `, html);
     }
 
-    //titleList.innerHTML = html;
+    titleList.innerHTML = html;
 
     const links = document.querySelectorAll('.titles a');
     console.log(`links: `, links);

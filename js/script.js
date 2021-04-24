@@ -142,37 +142,37 @@
   generateTitleLinks();
 
 
-  function calculateTagsParams(tags){
+  function calculateParams(items){
     const params = {max: 0, min: 999999};
-    for(let tag in tags){
-      console.log(`${tag} is used ${tags[tag]} times`);
+    for(let item in items){
+      console.log(`${item} is used ${items[item]} times`);
 
-      if(tags[tag] > params.max){
-        params.max = Math.max(tags[tag], params.max);
-      } else if(tags[tag] < params.min){
-        params.min = Math.min(tags[tag], params.min);
+      if(items[item] > params.max){
+        params.max = Math.max(items[item], params.max);
+      } else if(items[item] < params.min){
+        params.min = Math.min(items[item], params.min);
       }
 
       // Other options:
 
-      /*if(tags[tag] > params.max){
-      params.max = tags[tag];
-      } else if(tags[tag] < params.min){
-        params.min = tags[tag];
+      /*if(items[item] > params.max){
+      params.max = items[item];
+      } else if(items[item] < params.min){
+        params.min = items[item];
       }*/
 
       /* Syntax: condition ? valueIfTrue : valueIfFalse
-      params.max = tags[tag] > params.max ? tags[tag] : params.max;
-      params.min = tags[tag] < params.min ? tags[tag] : params.min;*/
+      params.max = items[item] > params.max ? items[item] : params.max;
+      params.min = items[item] < params.min ? items[item] : params.min;*/
     }
 
     return params;
   }
 
-  calculateTagsParams();
+  calculateParams();
 
 
-  function calculateTagClass(count, params){
+  function calculateClass(count, params){
     const normalizedCount = count - params.min;
     const normalizedMax = params.max - params.min;
     const percentage = normalizedCount / normalizedMax;
@@ -244,7 +244,7 @@
     const tagList = document.querySelector(select.listOf.tags);
 
     /* [NEW] create variable for all links HTML code */
-    const tagsParams = calculateTagsParams(allTags);
+    const tagsParams = calculateParams(allTags);
     console.log('tagsParams:', tagsParams);
     //let allTagsHTML = '';
     const allTagsData = {tags: []};
@@ -252,11 +252,11 @@
     /* START LOOP: for each tag in allTags: */
     for(let tag in allTags){
       /* generate code of a link and add it to allTagsHTML */
-      //allTagsHTML += `<li><a href=#tag-${tag} class="${calculateTagClass(allTags[tag], tagsParams)}">${tag}</a></li>`;
+      //allTagsHTML += `<li><a href=#tag-${tag} class="${calculateClass(allTags[tag], tagsParams)}">${tag}</a></li>`;
       allTagsData.tags.push({
         tag: tag,
         count: allTags[tag],
-        className: calculateTagClass(allTags[tag], tagsParams)
+        className: calculateClass(allTags[tag], tagsParams)
       });
     }
     /* END LOOP: for each tag in allTags: */
@@ -403,7 +403,7 @@
     const authorList = document.querySelector(select.listOf.authors);
 
     /* [NEW] create variable for all links HTML code */
-    const authorsParams = calculateTagsParams(allAuthors);
+    const authorsParams = calculateParams(allAuthors);
     console.log('authorsParams:', authorsParams);
     //let allAuthorsHTML = '';
     const allAuthorsData = {authors: []};
@@ -414,7 +414,7 @@
       allAuthorsData.authors.push({
         author: author,
         count: allAuthors[author],
-        className: calculateTagClass(allAuthors[author], authorsParams)
+        className: calculateClass(allAuthors[author], authorsParams)
       });
 
     /* END LOOP: for each author in allAuthors: */

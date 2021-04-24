@@ -269,6 +269,31 @@
 
   generateTags();
 
+  $(document).ready(function() {
+    if(!$('#myCanvas').tagcanvas({
+      //textColour: '#ff0000',
+      outlineMethod: 'size',
+      //outlineColour: '#e6ecff',
+      outlineIncrease: 4,
+      reverse: true,
+      depth: 0.8,
+      maxSpeed: 0.05,
+      textFont: null,
+      textColour: null,
+      minBrightness: 0.2,
+      // weightMode:'size',
+      // weight: false,
+      // weightGradient: {
+      //   0: '#f00', // red
+      //   //0.33: '#ff0', // yellow
+      //   //0.66: '#0f0', // green
+      //   1: '#00f'  // blue
+      // }
+    },'tags')) {
+      // something went wrong, hide the canvas container
+      $('#meCanvasContainer').hide();
+    }
+  });
 
   function tagClickHandler(event){
     /* prevent default action for this event */
